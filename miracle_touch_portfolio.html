@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miracle Touch – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #B8860B;
+    --gold-light: #D4A017;
+    --gold-pale: #F5E6C8;
+    --gold-text: #7A5800;
+    --cream: #FAF6EF;
+    --cream-deep: #F0E8D8;
+    --ink: #2C1F00;
+    --ink-soft: #5C4A1E;
+    --border: rgba(184,134,11,0.25);
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding-bottom: 60px;
+    border-bottom: 0.5px solid var(--border);
+    position: relative;
+  }
+
+  .logo-ring {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    background: radial-gradient(circle at 40% 35%, #FFF9F0, var(--cream-deep));
+    box-shadow: 0 0 0 8px rgba(184,134,11,0.07), 0 4px 24px rgba(184,134,11,0.12);
+    overflow: hidden;
+  }
+
+  .logo-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .brand-sub {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--gold-text);
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--gold);
+    font-size: 18px;
+    opacity: 0.6;
+  }
+  .ornament::before, .ornament::after {
+    content: '';
+    width: 80px;
+    height: 0.5px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 40px;
+    border: 0.5px solid var(--border);
+  }
+
+  .stat {
+    background: var(--cream);
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    display: block;
+    margin-top: 6px;
+    font-weight: 300;
+  }
+
+  /* ABOUT */
+  .section {
+    padding: 60px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 400;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .about-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--gold-text);
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .about-block p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* DIRECTIONS */
+  .directions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .direction-card {
+    background: var(--cream-deep);
+    border: 0.5px solid var(--border);
+    padding: 28px 24px;
+  }
+
+  .direction-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .direction-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--gold-text);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .direction-items {
+    list-style: none;
+  }
+
+  .direction-items li {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-weight: 300;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .direction-items li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  /* TRAININGS TABLE */
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead tr {
+    background: var(--cream-deep);
+    border-bottom: 1px solid var(--gold);
+  }
+
+  thead th {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--gold-text);
+    padding: 14px 16px;
+    text-align: left;
+  }
+
+  tbody tr {
+    border-bottom: 0.5px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  tbody tr:hover {
+    background: rgba(184,134,11,0.04);
+  }
+
+  tbody td {
+    padding: 14px 16px;
+    color: var(--ink-soft);
+    font-weight: 300;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .td-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--gold);
+    font-weight: 500;
+    width: 40px;
+    text-align: center;
+  }
+
+  .td-name {
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 13.5px;
+  }
+
+  .td-date {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .td-count {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--gold-text);
+  }
+
+  .badge-online {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    background: var(--gold-pale);
+    color: var(--gold-text);
+    border: 0.5px solid var(--border);
+  }
+
+  .result-text {
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  /* PRINCIPLES */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+
+  .principle {
+    text-align: center;
+    padding: 24px 12px;
+    background: var(--cream-deep);
+    border: 0.5px solid var(--border);
+  }
+
+  .principle span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold-text);
+    display: block;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  .footer-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+
+  .footer-quote strong {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .footer-sub {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 40px;
+  }
+
+  .contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  .contact-item .icon {
+    width: 32px;
+    height: 32px;
+    border: 0.5px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 14px;
+  }
+
+  @media print {
+    .page { padding: 40px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="logo-ring">
+      <img src="/mnt/user-data/uploads/1779716973558_image.png" alt="Miracle Touch logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<svg viewBox=\'0 0 80 80\' xmlns=\'http://www.w3.org/2000/svg\'><text x=\'50%\' y=\'55%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'serif\' font-size=\'28\' fill=\'#B8860B\'>✦</text></svg>'">
+    </div>
+    <div class="brand-name">Miracle Touch</div>
+    <div class="brand-sub">Şəxsi İnkişaf Mərkəzi</div>
+    <div class="ornament">∞</div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">23</span>
+        <span class="stat-label">Tamamlanmış Təlim</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100+</span>
+        <span class="stat-label">İştirakçı</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2024</span>
+        <span class="stat-label">Fəaliyyət Başlanğıcı</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="section-title">Haqqımızda</div>
+    <div class="about-grid">
+      <div class="about-block">
+        <h3>Missiyamız</h3>
+        <p>İnsanlara özünü tanımaq, daxili gücünü aktivləşdirmək, emosional yaralarını şəfalandırmaq, münasibətlərdə sağlam sərhədlər qurmaq və həyatında şüurlu seçimlər etmək bacarığını qazandırmaq.</p>
+      </div>
+      <div class="about-block">
+        <h3>Vizyonumuz</h3>
+        <p>Şəxsi inkişaf, psixoloji sağlamlıq və ruhani şüurun inteqrasiya olunduğu güclü, balanslı və şüurlu insan cəmiyyəti yaratmaq. Hər insan dəyişə bilər — amma dəyişiklik şüurlu sistemlə baş verir.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRECTIONS -->
+  <div class="section">
+    <div class="section-title">Təlim İstiqamətləri</div>
+    <div class="directions-grid">
+      <div class="direction-card">
+        <span class="direction-icon">🧠</span>
+        <h4>Psixoloji İnkişaf &amp; Mental Sağlamlıq</h4>
+        <ul class="direction-items">
+          <li>Düşüncə sistemlərinin yenidən qurulması</li>
+          <li>Emosional travmaların tanınması</li>
+          <li>Özünə dəyər və inamın gücləndirilməsi</li>
+          <li>Stress və daxili gərginliyin idarəsi</li>
+          <li>Kölgə tərəflərin (shadow work) inteqrasiyası</li>
+        </ul>
+      </div>
+      <div class="direction-card">
+        <span class="direction-icon">💫</span>
+        <h4>Ruhani İnkişaf &amp; Daxili Şüur</h4>
+        <ul class="direction-items">
+          <li>Daxili sükut və şüur təcrübələri</li>
+          <li>Enerji balansı və daxili harmoniya</li>
+          <li>Karmanın anlaşılması</li>
+          <li>Meditasiya və şüurlu varlıq vəziyyəti</li>
+          <li>Öz ruhani yolunu tanımaq</li>
+        </ul>
+      </div>
+      <div class="direction-card">
+        <span class="direction-icon">💬</span>
+        <h4>Münasibətlər &amp; Sosial Bacarıqlar</h4>
+        <ul class="direction-items">
+          <li>Sağlam sərhədlərin qurulması</li>
+          <li>İnsanlarla balanslı ünsiyyət</li>
+          <li>Emosional asılılıqlardan azad olmaq</li>
+          <li>Sevgi, qəbul edilmə və bağlanma modelləri</li>
+          <li>Konfliktlərin şüurlu idarəsi</li>
+        </ul>
+      </div>
+      <div class="direction-card">
+        <span class="direction-icon">🔥</span>
+        <h4>Şəxsi Güc &amp; Həyat İdarəetməsi</h4>
+        <ul class="direction-items">
+          <li>Məqsəd qoyma və istiqamət seçimi</li>
+          <li>İradə və intizamın gücləndirilməsi</li>
+          <li>Həyat qərarlarının şüurlu verilməsi</li>
+          <li>Daxili liderlik və məsuliyyət</li>
+          <li>Öz potensialını aktivləşdirmək</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRAININGS -->
+  <div class="section">
+    <div class="section-title">Təlimlər</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Təlimin adı</th>
+            <th>Tarix</th>
+            <th>İşt.</th>
+            <th>Mövzu</th>
+            <th>Format</th>
+            <th>Nəticə</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-num">1</td>
+            <td class="td-name">Bağ qurmaq</td>
+            <td class="td-date">10.02.2026</td>
+            <td class="td-count">10</td>
+            <td>Sağlam bağlar necə yaranır?</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">İştirakçılar sağlam emosional bağların qurulma mexanizmləri ilə tanış oldular və öz münasibət nümunələrini analiz etdilər.</td>
+          </tr>
+          <tr>
+            <td class="td-num">2</td>
+            <td class="td-name">Öz məsuliyyətini dərk etmək</td>
+            <td class="td-date">17.04.2026</td>
+            <td class="td-count">12</td>
+            <td>Sən həqiqətən böyümək istəyirsən?</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">İştirakçılar şəxsi məsuliyyət və özünü inkişaf arasındakı fərqi anlamaq imkanı qazandılar.</td>
+          </tr>
+          <tr>
+            <td class="td-num">3</td>
+            <td class="td-name">Emosional kontrol</td>
+            <td class="td-date">09.04.2026</td>
+            <td class="td-count">13</td>
+            <td>Emosiyaların idarə olunması</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">Emosiyaların idarəsi və aqressiyanın konstruktiv yönləndirilməsi. Praktiki nümunələr vasitəsilə tətbiq yolları müzakirə olundu.</td>
+          </tr>
+          <tr>
+            <td class="td-num">4</td>
+            <td class="td-name">Hədəfə çatmaq</td>
+            <td class="td-date">16.05.2026</td>
+            <td class="td-count">11</td>
+            <td>Disiplin və Fərgindəlik</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">Disiplin və məqsəd yönümlü davranışın formalaşması. Şəxsi məqsədlərin prioritetləşdirilməsi üzərində praktiki iş aparıldı.</td>
+          </tr>
+          <tr>
+            <td class="td-num">5</td>
+            <td class="td-name">Özünü yenidən yarat</td>
+            <td class="td-date">12.12.2025</td>
+            <td class="td-count">12</td>
+            <td>Özünü və ehtiyaclarını düzgün görə bilmək</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">İştirakçılar öz ehtiyaclarını daha dərindən anlamaq imkanı qazandılar. Refleksiya məşqləri ilə şəxsi inkişaf istiqamətində yeni baxış formalaşdı.</td>
+          </tr>
+          <tr>
+            <td class="td-num">6</td>
+            <td class="td-name">Qadın enerjisi</td>
+            <td class="td-date">26.11.2025</td>
+            <td class="td-count">8</td>
+            <td>Qadın enerjisi, dişi arxaetiplər</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">7</td>
+            <td class="td-name">Yoga</td>
+            <td class="td-date">06.01.2026</td>
+            <td class="td-count">5</td>
+            <td>Sağlam bədən, sağlam enerji</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">8</td>
+            <td class="td-name">Numerologiya</td>
+            <td class="td-date">23.02.2026</td>
+            <td class="td-count">7</td>
+            <td>Rəqəmlərin sirri</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">9</td>
+            <td class="td-name">Psixoloji Qoxular</td>
+            <td class="td-date">29.10.2025</td>
+            <td class="td-count">14</td>
+            <td>Tərk edilmə qorxusu</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">10</td>
+            <td class="td-name">Rutinlər</td>
+            <td class="td-date">23.10.2025</td>
+            <td class="td-count">10</td>
+            <td>Yeni Rutinlər və Disiplin</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">11</td>
+            <td class="td-name">Psixoloji sağlamlıq</td>
+            <td class="td-date">18.10.2025</td>
+            <td class="td-count">9</td>
+            <td>Rədd edilmə duyğusu və psixoloji sağalma</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">12</td>
+            <td class="td-name">Stress</td>
+            <td class="td-date">28.09.2025</td>
+            <td class="td-count">8</td>
+            <td>Stress və Həyat enerjisi</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">13</td>
+            <td class="td-name">Effektiv ünsiyyət</td>
+            <td class="td-date">12.09.2025</td>
+            <td class="td-count">12</td>
+            <td>Effektiv ünsiyyət necə qurulur?</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">14</td>
+            <td class="td-name">Özünü ifadə</td>
+            <td class="td-date">31.08.2025</td>
+            <td class="td-count">12</td>
+            <td>Sevgi, parıltı və özünü ifadə</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">15</td>
+            <td class="td-name">Afrodita</td>
+            <td class="td-date">25.07.2025</td>
+            <td class="td-count">7</td>
+            <td>Öz baxım, qadın enerjisi</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">16</td>
+            <td class="td-name">Sərhəd qoymaq</td>
+            <td class="td-date">17.07.2025</td>
+            <td class="td-count">8</td>
+            <td>Sərhəd qoymaq və özünü seçmək</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">17</td>
+            <td class="td-name">Tükənmişlik Sendromu</td>
+            <td class="td-date">10.07.2025</td>
+            <td class="td-count">15</td>
+            <td>Tükənmişlikdən necə çıxmaq olar?</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">18</td>
+            <td class="td-name">Anda qala bilmək</td>
+            <td class="td-date">04.07.2025</td>
+            <td class="td-count">8</td>
+            <td>İndiki anın sehrini kəşf etmək</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">19</td>
+            <td class="td-name">Sözlərin gücü</td>
+            <td class="td-date">27.05.2025</td>
+            <td class="td-count">12</td>
+            <td>Sözlərin gücü ilə yeni reallığın yaradılması</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">20</td>
+            <td class="td-name">Qadın enerjisi ilə liderlik</td>
+            <td class="td-date">25.05.2025</td>
+            <td class="td-count">15</td>
+            <td>Liderlik nədir? Qadın enerjisi ilə liderlik</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">21</td>
+            <td class="td-name">Münasibətlərdə sərhədlər</td>
+            <td class="td-date">17.05.2025</td>
+            <td class="td-count">12</td>
+            <td>Münasibətlərdə sərhədlər vacibdir mi?</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">22</td>
+            <td class="td-name">Gözəlliyin gücü</td>
+            <td class="td-date">09.05.2025</td>
+            <td class="td-count">16</td>
+            <td>Estetika və gözəlliyin psixologiyamıza təsiri</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+          <tr>
+            <td class="td-num">23</td>
+            <td class="td-name">Sabitlik və Dəyişim</td>
+            <td class="td-date">30.04.2025</td>
+            <td class="td-count">12</td>
+            <td>Sabitlik və dəyişim arasındakı balans</td>
+            <td><span class="badge-online">Online</span></td>
+            <td class="result-text">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PRINCIPLES -->
+  <div class="section">
+    <div class="section-title">Əsas Prinsiplər</div>
+    <div class="principles-grid">
+      <div class="principle"><span>Şüur əsaslı inkişaf</span></div>
+      <div class="principle"><span>Dürüstlük &amp; açıq transformasiya</span></div>
+      <div class="principle"><span>Təcrübə + bilik inteqrasiyası</span></div>
+      <div class="principle"><span>İnsan mərkəzli yanaşma</span></div>
+      <div class="principle"><span>Davamlı inkişaf &amp; praktiklik</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="ornament" style="margin-bottom: 32px;">∞</div>
+    <div class="footer-quote">Hər insan dəyişə bilər.</div>
+    <div class="footer-quote" style="margin-bottom: 20px;">Amma dəyişiklik təsadüfi yox — <strong>şüurlu sistemlə</strong> baş verir.</div>
+    <div class="footer-sub">Miracle Touch Community · 2024 –</div>
+    <div class="contact-row">
+      <div class="contact-item">
+        <div class="icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </div>
+        miracle.touch.psychology
+      </div>
+      <div class="contact-item">
+        <div class="icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        </div>
+        +994 55 939 3909
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
